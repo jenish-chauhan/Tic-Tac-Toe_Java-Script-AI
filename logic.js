@@ -30,13 +30,15 @@ boxes.forEach((box) => {
     if (turnO) {
       //playerO
       box.innerText = "O";
+      box.classList.add("o");
       turnO = false;
     } else {
       //playerX
       box.innerText = "X";
+      box.classList.add("x");
       turnO = true;
     }
-    box.disabled = true;
+    box.disabled = true; //Disable the box after click
     count++;
 
     let isWinner = checkWinner();
@@ -63,6 +65,7 @@ const enableBoxes = () => {
   for (let box of boxes) {
     box.disabled = false;
     box.innerText = "";
+    box.classList.remove("x", "o", "winner");
   }
 };
 
@@ -80,6 +83,10 @@ const checkWinner = () => {
 
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
+        // highlight winning cells
+        for (let index of pattern) {
+          boxes[index].classList.add("winner");
+        }
         showWinner(pos1Val);
         return true;
       }
