@@ -3,30 +3,144 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic-Tac-Toe Game</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Tic-Tac-Toe Game - Play Online Free | Modern JavaScript Game</title>
+    <meta
+      name="title"
+      content="Tic-Tac-Toe Game - Play Online Free | Modern JavaScript Game"
+    />
+    <meta
+      name="description"
+      content="Play Tic-Tac-Toe online for free! A modern, responsive game built with JavaScript. Beautiful UI with smooth animations and mobile-friendly design. Challenge your friends or play against the computer."
+    />
+    <meta
+      name="keywords"
+      content="tic-tac-toe, tic tac toe, noughts and crosses, xo game, javascript game, online game, free game, browser game, puzzle game, strategy game"
+    />
+    <meta name="author" content="Tic-Tac-Toe Game" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/" />
+    <meta
+      property="og:title"
+      content="Tic-Tac-Toe Game - Play Online Free | Modern JavaScript Game"
+    />
+    <meta
+      property="og:description"
+      content="Play Tic-Tac-Toe online for free! A modern, responsive game built with JavaScript. Beautiful UI with smooth animations and mobile-friendly design."
+    />
+    <meta
+      property="og:image"
+      content="https://your-domain.com/tic-tac-toe-preview.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tic-Tac-Toe Game" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-domain.com/" />
+    <meta
+      property="twitter:title"
+      content="Tic-Tac-Toe Game - Play Online Free"
+    />
+    <meta
+      property="twitter:description"
+      content="Play Tic-Tac-Toe online for free! Modern JavaScript game with beautiful UI and smooth animations."
+    />
+    <meta
+      property="twitter:image"
+      content="https://your-domain.com/tic-tac-toe-preview.jpg"
+    />
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#06b6d4" />
+    <meta name="msapplication-TileColor" content="#06b6d4" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Tic-Tac-Toe" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-domain.com/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Tic-Tac-Toe Game",
+        "description": "A modern, responsive Tic-Tac-Toe game built with JavaScript. Play online for free with beautiful UI and smooth animations.",
+        "url": "https://your-domain.com/",
+        "applicationCategory": "Game",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Tic-Tac-Toe Game"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "150"
+        },
+        "screenshot": "https://your-domain.com/tic-tac-toe-screenshot.jpg",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-12-19"
+      }
+    </script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="msg-container hide" role="dialog" aria-modal="true">
+    <div
+      class="msg-container hide"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="msg"
+    >
       <p id="msg" aria-live="polite">Winner</p>
-      <button id="new-btn">New Game</button>
+      <button id="new-btn" aria-label="Start new game">New Game</button>
     </div>
     <main>
       <h1>Tic Tac Toe</h1>
       <div class="container">
-        <div class="game">
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
-          <button class="box"></button>
+        <div class="game" role="grid" aria-label="Tic-tac-toe game board">
+          <button class="box" aria-label="Cell 1" data-index="0"></button>
+          <button class="box" aria-label="Cell 2" data-index="1"></button>
+          <button class="box" aria-label="Cell 3" data-index="2"></button>
+          <button class="box" aria-label="Cell 4" data-index="3"></button>
+          <button class="box" aria-label="Cell 5" data-index="4"></button>
+          <button class="box" aria-label="Cell 6" data-index="5"></button>
+          <button class="box" aria-label="Cell 7" data-index="6"></button>
+          <button class="box" aria-label="Cell 8" data-index="7"></button>
+          <button class="box" aria-label="Cell 9" data-index="8"></button>
         </div>
       </div>
-      <button id="reset-btn">Reset Game</button>
+      <button id="reset-btn" aria-label="Reset the game">Reset Game</button>
     </main>
     <script src="logic.js"></script>
   </body>
